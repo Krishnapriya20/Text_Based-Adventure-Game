@@ -1,0 +1,16 @@
+import joblib
+
+# Load the trained model and vectorizer
+model = joblib.load("../models/ai_adventure_game_model.pkl")
+vectorizer = joblib.load("../models/vectorizer.pkl")
+
+# Function to get AI response based on player's action
+def get_ai_response(player_action):
+    action_vec = vectorizer.transform([player_action])
+    response = model.predict(action_vec)[0]
+    return response
+
+# Test the model
+player_input = "go north"
+response = get_ai_response(player_input)
+print(f"AI Response: {response}")
