@@ -1,0 +1,12 @@
+import pandas as pd
+
+# Load game data
+game_data = pd.read_csv("../data/game_data.csv")
+
+# Simple preprocessing (if needed)
+# For this example, we are assuming the data is already cleaned
+
+# Saving the processed data
+game_data.to_csv("../data/processed_game_data.csv", index=False)
+
+print("Data preprocessing completed and saved.")
